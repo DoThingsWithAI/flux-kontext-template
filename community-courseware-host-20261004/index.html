@@ -1,0 +1,13 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>走进我们的社区 · Our Community</title>
+<style>html,body{margin:0;height:100%;display:grid;place-items:center;font-family:system-ui,sans-serif;background:#eef7fa;color:#315b68}.msg{padding:24px;text-align:center}</style>
+</head><body><div class="msg">正在打开互动课件…</div>
+<script>
+(async()=>{try{
+ const names=["chunk-00.txt","chunk-01.txt","chunk-02.txt","chunk-03.txt","chunk-04.txt","chunk-05.txt","chunk-06.txt","chunk-07.txt","chunk-08.txt","chunk-09.txt","chunk-10.txt","chunk-11.txt","chunk-12.txt","chunk-13.txt","chunk-14.txt"];
+ const parts=await Promise.all(names.map(n=>fetch(n).then(r=>{if(!r.ok)throw new Error(n+" "+r.status);return r.text()})));
+ const source=parts.join("");
+ document.open(); document.write(source); document.close();
+}catch(e){document.body.innerHTML='<div class="msg">课件加载失败：'+String(e)+'</div>';}})();
+</script></body></html>
